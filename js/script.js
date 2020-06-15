@@ -26,5 +26,27 @@ $(document).ready(function() {
     $(this).parent().remove();
   });
 
+  // Prompt per aggiungere elementi alla lista delle cose da fare cliccando il bottone aggiungi
+  $('.btn-add-item').click(function(){
+    var elementoDaAggiungere = $('.prompt-item').val();
+    var cloneLiDaAggiungere = $('.template li').clone();
+    cloneLiDaAggiungere.prepend(elementoDaAggiungere);
+    $('.todo-lista ul').append(cloneLiDaAggiungere);
+    $('.prompt-item').val('');
+  });
+
+  // Prompt per aggiungere elementi alla lista delle cose da fare cliccando invio
+  $('.prompt-item').keypress(function(event){
+    if (event.which === 13) {
+      var elementoDaAggiungere = $('.prompt-item').val();
+      var cloneLiDaAggiungere = $('.template li').clone();
+      cloneLiDaAggiungere.prepend(elementoDaAggiungere);
+      $('.todo-lista ul').append(cloneLiDaAggiungere);
+      $('.prompt-item').val('');
+    }
+
+  });
+
+
 
 });

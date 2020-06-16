@@ -19,9 +19,8 @@ $(document).ready(function() {
   //   $(this).parent().remove();
   // });
 
-  // Per essere sicuri che funziona anche con gli elementi che creo
-  // tramite un prompt
-  // il tasto rimuovi lo uso con la funzione .on, forma estesa di click
+  // Per essere sicuri che il tasto rimuovi funzioni anche con gli elementi che aggiungo
+  // tramite prompt, lo uso con la funzione .on, forma estesa di .click
   $(document).on('click','.delete-item', function(){
     $(this).parent().remove();
   });
@@ -46,7 +45,5 @@ $(document).ready(function() {
     }
 
   });
-
-
 
 });
